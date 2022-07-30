@@ -1,5 +1,5 @@
 local lib = {}
-if game.PlaceId~=13822889 then
+if game.PlaceId~=8326538092 then
     repeat until nil
 end
 
