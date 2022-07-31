@@ -1,3 +1,77 @@
+
+Local Frost = BWood3
+-- Set Player Name Below:
+local PlayerName = _G.Plr_2b
+
+-- Script:
+local Tag
+for i,v in pairs(Workspace.Properties:GetChildren()) do
+if v.Owner.Value == game.Players[PlayerName] then
+Tag = v.OriginSquare.CFrame
+end
+end
+
+local ItsCFrame
+local Remote = game.ReplicatedStorage.PlaceStructure.ClientPlacedStructure
+for i,v in pairs(game.Workspace.PlayerModels:GetChildren()) do
+if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[PlayerName] then
+if v:FindFirstChild("Type") and v.Type.Value == "Blueprint" then
+if v:FindFirstChild("MainCFrame") then
+else
+ItsCFrame = v.PrimaryPart.CFrame
+end
+if v ~= nil then
+Remote:FireServer(v.Name, ItsCFrame, game.Players.LocalPlayer, "", v, false)
+end
+end
+end
+end
+
+local Vec = Vector3.new
+local Ang = CFrame.Angles
+local Plr = game.Players.LocalPlayer
+function SetBp(WT, Count)
+local Remote = game.ReplicatedStorage.PlaceStructure.ClientPlacedStructure
+repeat
+wait(2)
+game:GetService("RunService").RenderStepped:wait(0.3)
+local ItsCFrame = 0
+for i,v in pairs(game.Workspace.PlayerModels:GetChildren()) do
+if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[PlayerName] then
+if v:FindFirstChild("Type") and v.Type.Value == "Blueprint" then
+if v:FindFirstChild("MainCFrame") then
+else
+ItsCFrame = ItsCFrame  + 1
+end
+end
+end
+end
+until ItsCFrame == Count
+local ItsCFrame
+local Remote = game.ReplicatedStorage.PlaceStructure.ClientPlacedStructure
+for i,v in pairs(game.Workspace.PlayerModels:GetChildren()) do
+if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[PlayerName] then
+if v:FindFirstChild("Type") and v.Type.Value == "Blueprint" then
+if v:FindFirstChild("MainCFrame") then
+ItsCFrame = v.MainCFrame.Value
+else
+ItsCFrame = v.PrimaryPart.CFrame
+end
+if v ~= nil then
+Remote:FireServer(v.Name, ItsCFrame, game.Players.LocalPlayer, WT, v, false)
+end
+end
+end
+end
+end
+
+function Sbp(A_1, A_2, A_3)
+game.ReplicatedStorage.PlaceStructure.ClientPlacedBlueprint:FireServer(A_1, A_2, A_3)
+if (math.random(1,20) == 1) then
+game:GetService("RunService").RenderStepped:wait()
+end
+end
+
 Sbp('Wall2Tall',Tag*Ang(-1.5707963705063, 0, -1.5707963705063) + Vec(21.100006103516, 5.5999999046326, -65), Plr)
 Sbp('Wall2Tall',Tag*Ang(-1.5707963705063, -1.5707963705063, 0) + Vec(-98.5, 19.10000038147, 4.9000091552734), Plr)
 Sbp('Wall2Tall',Tag*Ang(-1.5707963705063, -1.5707963705063, 0) + Vec(-98.5, 19.100030899048, -11.100006103516), Plr)
