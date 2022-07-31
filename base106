@@ -1,5 +1,4 @@
 
-Local Frost = BWood3
 -- Set Player Name Below:
 local PlayerName = _G.Plr_2b
 
