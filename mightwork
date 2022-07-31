@@ -70,7 +70,3 @@ game:GetService("RunService").RenderStepped:wait()
 end
 end
 
-loadstring(game:HttpGet((_G.TESTTING), true))()  --lisa
-
-local text = formatloadstring()
-TexttoData(text)
