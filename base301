@@ -70,8 +70,6 @@ if (math.random(1,20) == 1) then
 game:GetService("RunService").RenderStepped:wait()
 end
 end
-Sbp('GlassPane4',Tag*Ang(1.5707963705062866, 0, -0) + Vec(64, 7.600015640258789, 5.100006103515625), Plr)
-Sbp('GlassPane4',Tag*Ang(1.5707963705062866, 0, -0) + Vec(64, 7.600015640258789, -2.899993896484375), Plr)
 Sbp('Floor2Small',Tag*Ang(-0, 0, -0) + Vec(61, 8.200000762939453, -1), Plr)
 Sbp('Floor2Small',Tag*Ang(-0, 0, -0) + Vec(67, 8.200000762939453, -1), Plr)
 Sbp('Floor2Small',Tag*Ang(-0, 0, -0) + Vec(61, 8.200000762939453, 7), Plr)
