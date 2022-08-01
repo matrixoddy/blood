@@ -2672,4 +2672,4 @@ Sbp('Wall2TallThin',Tag*Ang(-1.5707963705062866, -0, -0) + Vec(-90.5, 16.2000007
 Sbp('Wall2TallThin',Tag*Ang(-1.5707963705062866, 0, -3.1415927410125732) + Vec(-90, 25.600000381469727, 19.099998474121094), Plr)
 Sbp('Wall2TallThin',Tag*Ang(-1.5707963705062866, -0, -0) + Vec(-90.5, 16.200000762939453, -37), Plr)
 Sbp('Wall2TallThin',Tag*Ang(-1.5707963705062866, -0, -0) + Vec(-90.5, 16.200000762939453, 3), Plr)
-wait(1.3)SetBp("Grey", 84)
+wait(1.3)SetBp("Plastictaupe", 84)
